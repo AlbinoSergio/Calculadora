@@ -1,6 +1,6 @@
 package com.example.calculadora;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,7 +8,7 @@ class CalculadoraTest {
     private Calculadora calculadora = new Calculadora();
 
     @Test
-    void suma() {
+    public void suma() {
         int esperado = 5;
         int resultado = calculadora.suma(2,3);
         assertEquals(esperado, resultado);
@@ -16,7 +16,7 @@ class CalculadoraTest {
     }
 
     @Test
-    void resta() {
+    public void resta() {
         int esperado = 4;
         int resultado = calculadora.resta(7,3);
         assertEquals(esperado, resultado);
@@ -50,5 +50,19 @@ class CalculadoraTest {
         System.out.println("Estoy en division por cero");
 
     }
+
+    //----------------------------------------------------
+
+    @BeforeEach
+    public void beforeEach(){ System.out.println("beforeEach"); }
+
+    @AfterEach
+    public void afterEach(){ System.out.println("afterEach"); }
+
+    @BeforeAll
+    public static void beforeAll(){ System.out.println("beforeAll"); }
+
+    @AfterAll
+    public static void AfterAll(){ System.out.println("afterAll"); }
 
 }
